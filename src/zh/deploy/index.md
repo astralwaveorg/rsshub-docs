@@ -26,7 +26,7 @@ sidebar: auto
 
 ## Docker 镜像
 
-支持两种注册表：
+支持两种镜像仓库：
 
 - Docker Hub: [`diygod/rsshub`](https://hub.docker.com/r/diygod/rsshub)
 - GitHub: [`ghcr.io/diygod/rsshub`](https://github.com/DIYgod/RSSHub/pkgs/container/rsshub)
@@ -165,39 +165,15 @@ $ cd RSSHub
 
 下载完成后，需要安装依赖
 
-::: code-group
-
-```bash [pnpm]
+```bash
 pnpm i
 ```
 
-```bash [yarn]
-yarn i
-```
-
-```bash [npm]
-npm install
-```
-
-:::
-
 ### 编译
 
-::: code-group
-
-```bash [pnpm]
+```bash
 pnpm build
 ```
-
-```bash [yarn]
-yarn build
-```
-
-```bash [npm]
-npm run build
-```
-
-:::
 
 ### 启动
 
@@ -209,16 +185,8 @@ npm run build
 pnpm start
 ```
 
-```bash [yarn]
-yarn start
-```
-
-```bash [npm]
-npm run start
-```
-
 ```bash [pm2]
-pm2 start lib/index.ts --name rsshub
+pm2 start dist/index.mjs --name rsshub
 ```
 
 :::
@@ -445,7 +413,7 @@ sudo ansible-playbook rsshub.yaml
 
 [![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com/templates/X46PTP)
 
-## 部署到 Vercel <Badge type="danger" text="🚧 修复中" />
+## 部署到 Vercel
 
 ### 一键部署（无自动更新）
 
